@@ -1,6 +1,7 @@
 var express = require('express');
 var router = express.Router();
 var Movie = require('../models/movie');
+var User = require('../models/user');
 var _ = require('underscore');
 var app = express();
 
@@ -18,6 +19,33 @@ app.get('/',function(req,res){
 
         })
     })
+})
+
+//signup
+app.post('/usr/signup', function (req,res) {
+    var _user = req.body.user;
+
+    User.findOne({"name":_user.name}, function (err,user) {
+        if(err){
+            console.log(err);
+        }
+        console.log("----- "+user);
+        if(user){
+
+            return res.redirect('/');
+        }else{
+
+            var userNew = new User(_user);
+            userNew.save(function (err,user) {
+                if(err){
+                    console.log(err);
+                }
+
+                res.redirect('/admin/ulist');
+            });
+        }
+    });
+
 })
 app.get('/movie/:id',function(req,res){
     var id = req.params.id;
@@ -96,6 +124,19 @@ app.post('/admin/movie/new',function(req,res){
         })
     }
 })
+
+app.get('/admin/ulist',function(req,res){
+    User.fetch(function(err,users){
+        if(err){
+            console.log(err)
+        }
+        res.render('./pages/userlist',{
+            title:'用户列表页',
+            users:users
+        })
+    })
+})
+
 app.get('/admin/list',function(req,res){
     Movie.fetch(function(err,movies){
         if(err){
@@ -123,6 +164,7 @@ app.delete('/admin/list', function (req, res) {
         });
     }
 })
+
 /*
 
 app.delete('/admin/list', function (req, res) {

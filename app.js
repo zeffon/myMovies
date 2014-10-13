@@ -5,6 +5,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser')
 var routes = require('./routes/index');
 var Movie = require('./models/movie');
+var User = require('./models/user');
 var path = require('path');
 
 var app = express();
