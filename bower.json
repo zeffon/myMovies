@@ -1,0 +1,23 @@
+{
+  "name": "yuzefeng",
+  "version": "0.0.1",
+  "authors": [
+    "zeffon"
+  ],
+  "description": "my first nodejs web",
+  "keywords": [
+    "123"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "public/libs",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "~3.2.0"
+  }
+}

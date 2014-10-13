@@ -1,0 +1,165 @@
+0 info it worked if it ends with ok
+1 verbose cli [ '/usr/bin/node', '/usr/bin/npm', 'install' ]
+2 info using npm@1.4.28
+3 info using node@v0.10.32
+4 verbose node symlink /usr/bin/node
+5 verbose readDependencies using package.json deps
+6 verbose install where, deps [ '/home/yuzefeng/WebstormProjects/myMovies',
+6 verbose install   [ 'express',
+6 verbose install     'body-parser',
+6 verbose install     'cookie-parser',
+6 verbose install     'morgan',
+6 verbose install     'serve-favicon',
+6 verbose install     'debug',
+6 verbose install     'ejs',
+6 verbose install     'grunt',
+6 verbose install     'grunt-concurrent',
+6 verbose install     'grunt-contrib-watch',
+6 verbose install     'grunt-nodemon',
+6 verbose install     'grunt-mocha-test',
+6 verbose install     'grunt-contrib-less',
+6 verbose install     'grunt-contrib-uglify',
+6 verbose install     'grunt-contrib-jshint' ] ]
+7 info preinstall myMovies@0.0.1
+8 verbose readDependencies using package.json deps
+9 verbose already installed skipping cookie-parser@~1.3.3 /home/yuzefeng/WebstormProjects/myMovies
+10 verbose already installed skipping morgan@~1.3.0 /home/yuzefeng/WebstormProjects/myMovies
+11 verbose already installed skipping serve-favicon@~2.1.3 /home/yuzefeng/WebstormProjects/myMovies
+12 verbose already installed skipping debug@~2.0.0 /home/yuzefeng/WebstormProjects/myMovies
+13 verbose already installed skipping ejs@~0.8.5 /home/yuzefeng/WebstormProjects/myMovies
+14 verbose already installed skipping grunt@^0.4.5 /home/yuzefeng/WebstormProjects/myMovies
+15 verbose already installed skipping grunt-concurrent@^1.0.0 /home/yuzefeng/WebstormProjects/myMovies
+16 verbose already installed skipping grunt-contrib-watch@^0.6.1 /home/yuzefeng/WebstormProjects/myMovies
+17 verbose already installed skipping grunt-nodemon@^0.3.0 /home/yuzefeng/WebstormProjects/myMovies
+18 verbose already installed skipping grunt-mocha-test@* /home/yuzefeng/WebstormProjects/myMovies
+19 verbose already installed skipping grunt-contrib-less@* /home/yuzefeng/WebstormProjects/myMovies
+20 verbose already installed skipping grunt-contrib-uglify@* /home/yuzefeng/WebstormProjects/myMovies
+21 verbose already installed skipping grunt-contrib-jshint@* /home/yuzefeng/WebstormProjects/myMovies
+22 verbose already installed skipping express@~4.9.0 /home/yuzefeng/WebstormProjects/myMovies
+23 verbose already installed skipping body-parser@~1.8.1 /home/yuzefeng/WebstormProjects/myMovies
+24 silly resolved []
+25 info build /home/yuzefeng/WebstormProjects/myMovies
+26 verbose linkStuff [ false, false, false, '/home/yuzefeng/WebstormProjects' ]
+27 info linkStuff myMovies@0.0.1
+28 verbose linkBins myMovies@0.0.1
+29 verbose linkMans myMovies@0.0.1
+30 verbose rebuildBundles myMovies@0.0.1
+31 verbose rebuildBundles [ '.bin',
+31 verbose rebuildBundles   'body-parser',
+31 verbose rebuildBundles   'cookie-parser',
+31 verbose rebuildBundles   'debug',
+31 verbose rebuildBundles   'ejs',
+31 verbose rebuildBundles   'express',
+31 verbose rebuildBundles   'grunt',
+31 verbose rebuildBundles   'grunt-concurrent',
+31 verbose rebuildBundles   'grunt-contrib',
+31 verbose rebuildBundles   'grunt-contrib-jshint',
+31 verbose rebuildBundles   'grunt-contrib-less',
+31 verbose rebuildBundles   'grunt-contrib-uglify',
+31 verbose rebuildBundles   'grunt-contrib-watch',
+31 verbose rebuildBundles   'grunt-mocha-test',
+31 verbose rebuildBundles   'grunt-nodemon',
+31 verbose rebuildBundles   'mocha',
+31 verbose rebuildBundles   'moment',
+31 verbose rebuildBundles   'mongoose',
+31 verbose rebuildBundles   'morgan',
+31 verbose rebuildBundles   'serve-favicon',
+31 verbose rebuildBundles   'underscore' ]
+32 verbose rebuild bundle /home/yuzefeng/WebstormProjects/myMovies/node_modules/grunt-contrib
+33 info build /home/yuzefeng/WebstormProjects/myMovies/node_modules/grunt-contrib
+34 info preinstall grunt-contrib@0.11.0
+35 verbose linkStuff [ false,
+35 verbose linkStuff   false,
+35 verbose linkStuff   false,
+35 verbose linkStuff   '/home/yuzefeng/WebstormProjects/myMovies/node_modules' ]
+36 info linkStuff grunt-contrib@0.11.0
+37 verbose linkBins grunt-contrib@0.11.0
+38 verbose linkMans grunt-contrib@0.11.0
+39 verbose rebuildBundles grunt-contrib@0.11.0
+40 verbose rebuildBundles [ 'matchdep' ]
+41 info install grunt-contrib@0.11.0
+42 info postinstall grunt-contrib@0.11.0
+43 verbose rebuild bundle /home/yuzefeng/WebstormProjects/myMovies/node_modules/mocha
+44 info build /home/yuzefeng/WebstormProjects/myMovies/node_modules/mocha
+45 info preinstall mocha@1.21.5
+46 verbose linkStuff [ false,
+46 verbose linkStuff   false,
+46 verbose linkStuff   false,
+46 verbose linkStuff   '/home/yuzefeng/WebstormProjects/myMovies/node_modules' ]
+47 info linkStuff mocha@1.21.5
+48 verbose linkBins mocha@1.21.5
+49 verbose link bins [ { mocha: './bin/mocha', _mocha: './bin/_mocha' },
+49 verbose link bins   '/home/yuzefeng/WebstormProjects/myMovies/node_modules/.bin',
+49 verbose link bins   false ]
+50 verbose linkMans mocha@1.21.5
+51 verbose rebuildBundles mocha@1.21.5
+52 verbose rebuildBundles [ '.bin',
+52 verbose rebuildBundles   'commander',
+52 verbose rebuildBundles   'diff',
+52 verbose rebuildBundles   'escape-string-regexp',
+52 verbose rebuildBundles   'glob',
+52 verbose rebuildBundles   'growl',
+52 verbose rebuildBundles   'jade',
+52 verbose rebuildBundles   'mkdirp' ]
+53 info install mocha@1.21.5
+54 info postinstall mocha@1.21.5
+55 verbose rebuild bundle /home/yuzefeng/WebstormProjects/myMovies/node_modules/moment
+56 info build /home/yuzefeng/WebstormProjects/myMovies/node_modules/moment
+57 info preinstall moment@2.8.3
+58 verbose linkStuff [ false,
+58 verbose linkStuff   false,
+58 verbose linkStuff   false,
+58 verbose linkStuff   '/home/yuzefeng/WebstormProjects/myMovies/node_modules' ]
+59 info linkStuff moment@2.8.3
+60 verbose linkBins moment@2.8.3
+61 verbose linkMans moment@2.8.3
+62 verbose rebuildBundles moment@2.8.3
+63 info install moment@2.8.3
+64 info postinstall moment@2.8.3
+65 verbose rebuild bundle /home/yuzefeng/WebstormProjects/myMovies/node_modules/mongoose
+66 info build /home/yuzefeng/WebstormProjects/myMovies/node_modules/mongoose
+67 info preinstall mongoose@3.8.17
+68 verbose linkStuff [ false,
+68 verbose linkStuff   false,
+68 verbose linkStuff   false,
+68 verbose linkStuff   '/home/yuzefeng/WebstormProjects/myMovies/node_modules' ]
+69 info linkStuff mongoose@3.8.17
+70 verbose linkBins mongoose@3.8.17
+71 verbose linkMans mongoose@3.8.17
+72 verbose rebuildBundles mongoose@3.8.17
+73 verbose rebuildBundles [ 'hooks',
+73 verbose rebuildBundles   'mongodb',
+73 verbose rebuildBundles   'mpath',
+73 verbose rebuildBundles   'mpromise',
+73 verbose rebuildBundles   'mquery',
+73 verbose rebuildBundles   'ms',
+73 verbose rebuildBundles   'muri',
+73 verbose rebuildBundles   'regexp-clone',
+73 verbose rebuildBundles   'sliced' ]
+74 info install mongoose@3.8.17
+75 info postinstall mongoose@3.8.17
+76 verbose rebuild bundle /home/yuzefeng/WebstormProjects/myMovies/node_modules/underscore
+77 info build /home/yuzefeng/WebstormProjects/myMovies/node_modules/underscore
+78 info preinstall underscore@1.7.0
+79 verbose linkStuff [ false,
+79 verbose linkStuff   false,
+79 verbose linkStuff   false,
+79 verbose linkStuff   '/home/yuzefeng/WebstormProjects/myMovies/node_modules' ]
+80 info linkStuff underscore@1.7.0
+81 verbose linkBins underscore@1.7.0
+82 verbose linkMans underscore@1.7.0
+83 verbose rebuildBundles underscore@1.7.0
+84 info install underscore@1.7.0
+85 info postinstall underscore@1.7.0
+86 info install myMovies@0.0.1
+87 info postinstall myMovies@0.0.1
+88 info prepublish myMovies@0.0.1
+89 error peerinvalid The package grunt-contrib-uglify does not satisfy its siblings' peerDependencies requirements!
+89 error peerinvalid Peer grunt-contrib@0.11.0 wants grunt-contrib-uglify@~0.4.0
+90 error System Linux 3.13.0-37-generic
+91 error command "/usr/bin/node" "/usr/bin/npm" "install"
+92 error cwd /home/yuzefeng/WebstormProjects/myMovies
+93 error node -v v0.10.32
+94 error npm -v 1.4.28
+95 error code EPEERINVALID
+96 verbose exit [ 1, true ]
