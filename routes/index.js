@@ -5,21 +5,66 @@ var User = require('../models/user');
 var _ = require('underscore');
 var app = express();
 
+
 module.exports = app;
 app.locals.moment = require('moment');
 
+
+//user pre
+app.use(function (req,res,next) {
+    var _user = req.session.user;
+    if(_user){
+        app.locals.user = _user;
+    }else{
+        return next();
+    }
+});
+
 app.get('/',function(req,res){
+    console.log(req.session.user);
+
     Movie.fetch(function(err,movies){
         if(err){
             console.log(err)
         }
         res.render('./pages/index',{
+
+            user:app.locals.user,
+
             title:'影院热度播报',
+
             movies:movies
 
         })
     })
 })
+//signin
+app.post('/usr/signin', function (req,res) {
+    var _user = req.body.user;
+    var name = _user.name;
+    var password = _user.password;
+
+    User.findOne({name:name}, function (err,user) {
+        if(err){
+            console.log(err);
+        }
+        if(!user){
+            return res.redirect('/');
+
+        }
+        user.comparePassword(password, function (err, isMatch) {
+            if(err){
+                console.log(err);
+            }
+            if(isMatch){
+                req.session.user = user;
+                return res.redirect("/");
+            }
+            console.log('password is not matched');
+        })
+    })
+
+});
 
 //signup
 app.post('/usr/signup', function (req,res) {
@@ -29,7 +74,6 @@ app.post('/usr/signup', function (req,res) {
         if(err){
             console.log(err);
         }
-        console.log("----- "+user);
         if(user){
 
             return res.redirect('/');
@@ -46,7 +90,17 @@ app.post('/usr/signup', function (req,res) {
         }
     });
 
-})
+});
+//logout
+app.get('/logout', function (req,res) {
+    delete req.session.user;
+    delete app.locals.user;
+    res.redirect('/');
+
+});
+
+
+
 app.get('/movie/:id',function(req,res){
     var id = req.params.id;
 
@@ -165,17 +219,3 @@ app.delete('/admin/list', function (req, res) {
     }
 })
 
-/*
-
-app.delete('/admin/list', function (req, res) {
-    var id = req.query.id;
-    if(id){
-       Movie.remove({_id:id}, function (err,movie) {
-           if(err){
-               console.log(err);
-           }else{
-               res.json({success:1});
-           }
-       })
-    }
-})*/
