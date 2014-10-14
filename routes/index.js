@@ -11,7 +11,7 @@ app.locals.moment = require('moment');
 
 
 //user pre
-app.use(function (req,res,next) {
+app.use(function (req,res) {
     var _user = req.session.user;
     if(_user){
         app.locals.user = _user;
