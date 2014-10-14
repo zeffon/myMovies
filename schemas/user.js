@@ -11,9 +11,13 @@ var SALT_WORK_FACTOR =10;
 var UserSchema = new mongoose.Schema({
     name:{
         unique:true,
-        type:String
+        type:String,
+        required: true
     },
-    password:String,
+    password:{
+        type:String,
+        required: true
+    },
 
     meta:{
         createAt:{
@@ -46,9 +50,20 @@ UserSchema.pre('save', function (next) {
             next();
         })
     });
-    next();
-});
 
+});
+UserSchema.methods ={
+    comparePassword: function (_password,cb) {
+        bcrypt.compare(_password, this.password, function (err,isMatch) {
+
+            if(err){
+
+                return cb(err);
+            }
+            cb(null,isMatch);
+        });
+    }
+}
 UserSchema.statics = {
     fetch: function (cb) {
         return this.find({}).sort('meta.updateAt').exec(cb);
@@ -59,5 +74,6 @@ UserSchema.statics = {
     removeById: function (id,cb) {
         return this.remove({_id:id}).exec(cb);
     }
+
 }
 module.exports = UserSchema;

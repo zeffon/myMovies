@@ -2,6 +2,7 @@ var express = require('express');
 var router = express.Router();
 var Movie = require('../models/movie');
 var User = require('../models/user');
+
 var _ = require('underscore');
 var app = express();
 
@@ -20,7 +21,40 @@ app.get('/',function(req,res){
         })
     })
 })
+//signin
+app.post('/usr/signin', function (req,res) {
+    var _user = req.body.user;
+    var name = _user.name;
+    var password = _user.password;
+    User.findOne({name:name}, function (err,user) {
+        if(err){
+            console.log(err);
+        }
+        if(!user){
+            return res.redirect('/');
+            console.log('user is not existed');
+        }else{
+            user.comparePassword(password, function (err,isMatch) {
+                if(err){
+                    console.log(err);
+                }
+                console.log("new"+password);
+                console.log("old"+user.password);
+                if(isMatch){
+                    req.session.user = user;
 
+                    return res.redirect("/");
+
+                }else{
+
+                    console.log('password is not matched');
+
+                }
+            })
+        }
+
+    })
+});
 //signup
 app.post('/usr/signup', function (req,res) {
     var _user = req.body.user;
